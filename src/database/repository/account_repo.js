@@ -28,10 +28,6 @@ class AccountRepository{
         })
     }
 
-    find(uid){
-        return Account.findByPk(uid)
-    }
-
     findByUsername(username){
         return Account.findAll({where:{username:username}})
     }
