@@ -9,6 +9,7 @@ const aRepo= new AccountRepository();
 const saltRounds= 12;
 
 router.get("/", (req, res) => {
+    req.user= null;
     res.render('pages/welcome', {user: req.user})
 });
 

@@ -26,9 +26,9 @@
         </div>
         <div class="form-floating">
             <% if(option.transaction) {%>
-                <input type="text" class="form-control" id="floatingInput" placeholder="Value" name="value", value="<%= option.transaction.value %>"> 
+                <input type="number" step=".01" min="0" class="form-control" id="floatingInput" placeholder="Value" name="value", value="<%= option.transaction.value %>"> 
             <% } else{%>
-                <input type="text" class="form-control" id="floatingInput" placeholder="Value" name="value"> 
+                <input type="number" step=".01" min="0" class="form-control" id="floatingInput" placeholder="Value" name="value"> 
             <% } %>         
             <label for="floatingInput">Value</label>
         </div>
@@ -36,26 +36,26 @@
             <% if(option.action){ %>
                 <% if(option.type=="rev"){ %>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="radioRev" id="rev" checked disabled>
+                        <input class="form-check-input" type="radio" id="radioRev" name="type" value=1 checked>
                         <label class="form-check-label" for="radioRev">
                           Revenue
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="radioExp" id="exp" disabled>
+                        <input class="form-check-input" type="radio" id="radioExp" name="type" value=2 disabled>
                         <label class="form-check-label" for="radioExp">
                           Expense
                         </label>
                     </div>
                 <% } else{ %>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="radioRev" id="rev" disabled>
+                        <input class="form-check-input" type="radio" id="radioRev" name="type" value=1 disabled>
                         <label class="form-check-label" for="radioRev">
                           Revenue
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="radioExp" id="exp" checked disabled>
+                        <input class="form-check-input" type="radio" id="radioExp" name="type" value=2 checked>
                         <label class="form-check-label" for="radioExp">
                           Expense
                         </label>
@@ -65,39 +65,39 @@
             <% } else{ %>
                 <% if(option.type=="rev"){ %>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="radioRev" id="rev" checked disabled>
+                        <input class="form-check-input" type="radio" id="radioRev" name="type" value=1 checked>
                         <label class="form-check-label" for="radioRev">
                           Revenue
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="radioExp" id="exp" disabled>
+                        <input class="form-check-input" type="radio" id="radioExp" name="type" value=2 disabled>
                         <label class="form-check-label" for="radioExp">
                           Expense
                         </label>
                     </div>
                 <% } else if(option.type=="exp"){ %>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="radioRev" id="rev" disabled>
+                        <input class="form-check-input" type="radio" id="radioRev" name="type" value=1 disabled>
                         <label class="form-check-label" for="radioRev">
                           Revenue
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="radioExp" id="exp" checked disabled>
+                        <input class="form-check-input" type="radio" id="radioExp" name="type" value=2 checked>
                         <label class="form-check-label" for="radioExp">
                           Expense
                         </label>
                     </div>
                 <% } else{ %>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="radioRev" id="rev">
+                        <input class="form-check-input" type="radio" id="radioRev" name="type" value=1>
                         <label class="form-check-label" for="radioRev">
                           Revenue
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="radioExp" id="exp">
+                        <input class="form-check-input" type="radio" id="radioExp" name="type" value=2>
                         <label class="form-check-label" for="radioExp">
                           Expense
                         </label>
@@ -107,6 +107,5 @@
             <% } %>  
 
         <button type="submit" class="w-100 btn btn-lg btn-primary">Save</button>
-
     </form>
 </main>

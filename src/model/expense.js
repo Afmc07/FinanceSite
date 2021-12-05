@@ -9,7 +9,7 @@ expense.init({
         allowNull: false
     },
     value:{
-        type: DataTypes.DECIMAL,
+        type: DataTypes.DECIMAL(11, 2),
         allowNull: false
     }
 },{

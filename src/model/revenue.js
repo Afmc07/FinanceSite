@@ -9,11 +9,7 @@ revenue.init({
         allowNull: false
     },
     value:{
-        type: DataTypes.DECIMAL,
-        allowNull: false
-    },
-    type:{
-        type: DataTypes.STRING,
+        type: DataTypes.DECIMAL(11,2),
         allowNull: false
     }
 },{
